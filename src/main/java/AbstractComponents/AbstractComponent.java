@@ -21,6 +21,8 @@ public class AbstractComponent {
     @FindBy(css = "[routerlink*='myorders']")
     WebElement order;
 
+    By cartCss = By.cssSelector("[routerlink*='cart']");
+
     public AbstractComponent(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -47,6 +49,7 @@ public class AbstractComponent {
 
     public CartPage cartPage() throws InterruptedException {
         webdriverWait(20000);
+        waitForElementToAppear(cartCss);
         cart.click();
         CartPage cartPage = new CartPage(driver);
         return cartPage;
