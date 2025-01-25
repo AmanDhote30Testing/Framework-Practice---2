@@ -22,7 +22,7 @@ public class ErrorValidation extends BaseTest{
         String productName = "IPHONE 13 PRO";
         landingPage.goTo();
         ProductCatalog productCatalog = landingPage.login("amandhote@gogo.con", "Tech@12356");
-        Assert.assertEquals("Incorrect email  password.",landingPage.errorMsg());
+        Assert.assertEquals("Incorrect email or password.",landingPage.errorMsg());
     }
 
     @Test
